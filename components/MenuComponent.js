@@ -9,6 +9,7 @@ function Menu(props) {
         key={index}
         title={item.name}
         subtitle={item.description}
+        onPress={() => props.onPress(item.id)}
         leftAvatar={{ source: require("./images/uthappizza.png") }}
       />
     );
