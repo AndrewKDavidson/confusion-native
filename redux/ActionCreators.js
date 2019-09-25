@@ -1,5 +1,5 @@
 import * as ActionTypes from "./ActionTypes";
-import { baseUrls } from "../shared/baseUrl";
+import { baseUrl } from "../shared/baseUrl";
 
 export const fetchComments = () => dispatch => {
   return fetch(baseUrl + "comments")
@@ -16,8 +16,8 @@ export const fetchComments = () => dispatch => {
         }
       },
       error => {
-        var errMess = new Error(error.message);
-        throw errMess;
+        var errmess = new Error(error.message);
+        throw errmess;
       }
     )
     .then(response => response.json())
@@ -52,8 +52,8 @@ export const fetchDishes = () => dispatch => {
         }
       },
       error => {
-        var errMess = new Error(error.message);
-        throw errMess;
+        var errmess = new Error(error.message);
+        throw errmess;
       }
     )
     .then(response => response.json())
@@ -92,8 +92,8 @@ export const fetchPromos = () => dispatch => {
         }
       },
       error => {
-        var errMess = new Error(error.message);
-        throw errMess;
+        var errmess = new Error(error.message);
+        throw errmess;
       }
     )
     .then(response => response.json())
@@ -132,8 +132,8 @@ export const fetchLeaders = () => dispatch => {
         }
       },
       error => {
-        var errMess = new Error(error.message);
-        throw errMess;
+        var errmess = new Error(error.message);
+        throw errmess;
       }
     )
     .then(response => response.json())
