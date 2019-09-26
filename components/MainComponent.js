@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Home from "./HomeComponent";
 import Menu from "./MenuComponent";
 import DishDetail from "./DishDetailComponent";
+import Reservation from "./ReservationComponent";
 import About from "./AboutComponent";
 import Contact from "./ContactComponent";
 import {
@@ -157,6 +158,33 @@ const ContactNavigator = createStackNavigator(
   }
 );
 
+const ReservationNavigator = createStackNavigator(
+  {
+    Reservation: { screen: Reservation }
+  },
+  {
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: "#512DA8"
+      },
+      headerTintColor: "#fff",
+      headerTitleStyle: {
+        color: "#fff"
+      },
+      headerLeft: (
+        <Icon
+          name="menu"
+          size={24}
+          color="white"
+          onPress={() => {
+            navigation.toggleDrawer();
+          }}
+        />
+      )
+    })
+  }
+);
+
 const CustomDrawerContentComponent = props => (
   <ScrollView>
     <SafeAreaView
@@ -226,6 +254,21 @@ const MainNavigator = createDrawerNavigator(
             name="address-card"
             type="font-awesome"
             size={22}
+            color={tintColor}
+          />
+        )
+      }
+    },
+    Reservation: {
+      screen: ReservationNavigator,
+      navigationOptions: {
+        title: "Reserve Table",
+        drawerLabel: "Reserve Table",
+        drawerIcon: ({ tintColor }) => (
+          <Icon
+            name="cutlery"
+            type="font-awesome"
+            size={24}
             color={tintColor}
           />
         )
